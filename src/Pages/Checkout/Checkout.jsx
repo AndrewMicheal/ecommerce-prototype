@@ -38,13 +38,12 @@ export default function Checkout() {
                 values
             }
         }
-        // let {data} = await axios.request(options);
-        // console.log(data);
-        // if(data.status === "success") {
-        //     // setCartInfo([])
-        //     window.location.href = data.session.url;
-
-        // }
+        let {data} = await axios.request(options);
+        console.log(data);
+        if(data.status === "success") {
+            // setCartInfo([])
+            window.location.href = data.session.url;
+        }
     }
     const formik = useFormik({
         initialValues: {
