@@ -28,7 +28,7 @@ export default function Checkout() {
 
     async function createOnlineOrder(values) {
         const options = {
-            url : `${baseUrl}/api/v1/orders/checkout-session/${cartInfo.data._id}?url=http://localhost:5173` ,
+            url : `${baseUrl}/api/v1/orders/checkout-session/${cartInfo.data._id}?url=https://ecommerce-prototype-zeta.vercel.app/` ,
             method : "POST" ,
             headers: {
                 token ,
