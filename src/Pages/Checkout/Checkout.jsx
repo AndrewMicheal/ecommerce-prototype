@@ -27,6 +27,7 @@ export default function Checkout() {
     }
 
     async function createOnlineOrder(values) {
+        console.log(cartInfo.data._id);
         const options = {
             url : `${baseUrl}/api/v1/orders/checkout-session/${cartInfo.data._id}?url=https://ecommerce-prototype-zeta.vercel.app` ,
             method : "POST" ,
@@ -37,12 +38,13 @@ export default function Checkout() {
                 values
             }
         }
-        let {data} = await axios.request(options);
-        if(data.status === "success") {
-            // setCartInfo([])
-            window.location.href = data.session.url;
+        // let {data} = await axios.request(options);
+        // console.log(data);
+        // if(data.status === "success") {
+        //     // setCartInfo([])
+        //     window.location.href = data.session.url;
 
-        }
+        // }
     }
     const formik = useFormik({
         initialValues: {
