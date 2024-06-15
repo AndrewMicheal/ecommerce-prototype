@@ -3,7 +3,7 @@ import React from 'react'
 export default function Loading() {
     return (
         <>
-          <div className="loading min-h-screen flex justify-center items-center">
+          <div className=" min-h-screen flex justify-center items-center">
           <div className="preloader">
                 <svg className="cart" role="img" aria-label="Shopping cart line animation" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
                     <g fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8">

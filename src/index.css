@@ -19,78 +19,78 @@ body {
 }
 
 .preloader {
-	--hue: 120;
-	--bg: hsl(var(--hue),10%,90%);
-	--fg: hsl(var(--hue),10%,10%);
-	--primary: hsl(var(--hue),60%,55%);
-	--trans-dur: 0.3s;
-	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+	--hue: 120 !important;
+	--bg: hsl(var(--hue),10%,90%) !important;
+	--fg: hsl(var(--hue),10%,10%) !important;
+	--primary: hsl(var(--hue),60%,55%) !important;
+	--trans-dur: 0.3s !important;
+	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320)) !important;
 }
 
 .preloader {
-	text-align: center;
-	max-width: 20em;
-	width: 100%;
+	text-align: center !important;
+	max-width: 20em !important;
+	width: 100% !important;
 }
 .preloader__text {
-	position: relative;
-	height: 1.5em;
+	position: relative !important;
+	height: 1.5em !important;
 }
 .preloader__msg {
-	animation: msg 0.3s 13.7s linear forwards;
-	position: absolute;
-	width: 100%;
+	animation: msg 0.3s 13.7s linear forwards !important;
+	position: absolute !important;
+	width: 100% !important;
 }
 .preloader__msg--last {
-	animation-direction: reverse;
-	animation-delay: 14s;
-	visibility: hidden;
+	animation-direction: reverse !important;
+	animation-delay: 14s !important;
+	visibility: hidden !important;
 }
 .cart {
-	display: block;
-	margin: 0 auto 1.5em auto;
-	width: 8em;
-	height: 8em;
+	display: block !important;
+	margin: 0 auto 1.5em auto !important;
+	width: 8em !important;
+	height: 8em !important;
 }
 .cart__lines,
 .cart__top,
 .cart__wheel1,
 .cart__wheel2,
 .cart__wheel-stroke {
-	animation: cartLines 2s ease-in-out infinite;
+	animation: cartLines 2s ease-in-out infinite !important;
 }
 .cart__lines {
-	stroke: var(--primary);
+	stroke: var(--primary) !important;
 }
 .cart__top {
-	animation-name: cartTop;
+	animation-name: cartTop !important;
 }
 .cart__wheel1 {
-	animation-name: cartWheel1;
-	transform: rotate(-0.25turn);
-	transform-origin: 43px 111px;
+	animation-name: cartWheel1 !important;
+	transform: rotate(-0.25turn) !important;
+	transform-origin: 43px 111px !important;
 }
 .cart__wheel2 {
-	animation-name: cartWheel2;
-	transform: rotate(0.25turn);
-	transform-origin: 102px 111px;
+	animation-name: cartWheel2 !important;
+	transform: rotate(0.25turn) !important;
+	transform-origin: 102px 111px !important;
 }
 .cart__wheel-stroke {
-	animation-name: cartWheelStroke
+	animation-name: cartWheelStroke !important;
 }
 .cart__track {
-	stroke: hsla(var(--hue),10%,10%,0.1);
-	transition: stroke var(--trans-dur);
+	stroke: hsla(var(--hue),10%,10%,0.1) !important;
+	transition: stroke var(--trans-dur) !important;
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: hsl(var(--hue),10%,10%);
-		--fg: hsl(var(--hue),10%,90%);
+		--bg: hsl(var(--hue),10%,10%) !important;
+		--fg: hsl(var(--hue),10%,90%) !important;
 	}
 	.cart__track {
-		stroke: hsla(var(--hue),10%,90%,0.1);
+		stroke: hsla(var(--hue),10%,90%,0.1) !important;
 	}
 }
 
