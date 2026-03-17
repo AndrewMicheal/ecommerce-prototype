@@ -58,7 +58,7 @@ export default function Login() {
         <section>
             <h2 className = "text-2xl text-primary font-bold mb-5">
                 <i className = "fa-regular fa-circle-user me-3"></i>
-                <span>Login Now</span>
+                <span>Login Now and sign in</span>
             </h2>
             <form className = "space-y-3" onSubmit = {formik.handleSubmit}>
               
