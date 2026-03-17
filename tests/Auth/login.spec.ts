@@ -8,7 +8,7 @@ test.describe("Login Tests", () => {
     try {
       const response = await request.head(endpoint);
 
-    //   console.log("Status:", response.status());
+      console.log("Status:", response.status());
 
       expect(response.status()).toBeLessThan(500);
     } catch (error) {
