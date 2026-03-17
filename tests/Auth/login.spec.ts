@@ -42,7 +42,7 @@ test.describe("Login Tests", () => {
   });
 
   test("Login with empty fields" , async({page})=> {
-    await page.goto("http://localhost:5173/auth/login");
+    await page.goto("https://ecommerce-prototype-zeta.vercel.app/auth/login");
     await page.click("button[type='submit']");
     const emailInput = await page.locator('input[name= "email"]');
     const passwordInput = await page.locator('input[name= "password"]');
