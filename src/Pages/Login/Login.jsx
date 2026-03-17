@@ -22,6 +22,7 @@ export default function Login() {
        try {
             loadingId = toast.loading("Waiting...")
             const {data} = await axios.post(`${baseUrl}/api/v1/auth/signin` , values);
+            
             toast.dismiss(loadingId)
             toast.success("User Loggedin Successfully");
             setTimeout(() => {
@@ -72,7 +73,7 @@ export default function Login() {
                     onBlur = {formik.handleBlur}
 
                     />
-                    {formik.errors.email && formik.touched.email ? <p className = "text-red-600 font-semibold mt-2">* {formik.errors.email}</p> : ""}
+                    {formik.errors.email && formik.touched.email ? <p className = "text-red-600 font-semibold mt-2 emailError">* {formik.errors.email}</p> : ""}
 
                 </div>
                
@@ -96,7 +97,7 @@ export default function Login() {
                             setHidden("hidden");
                         }}  className={hidden == "hidden" ? "fa-solid fa-eye-slash hidden text-xl cursor-pointer" : "fa-solid fa-eye-slash text-xl cursor-pointer"}></i>
                     </div>
-                    {formik.errors.password && formik.touched.password ? <p className = "text-red-600 font-semibold mt-2">* {formik.errors.password}</p> : ""}
+                    {formik.errors.password && formik.touched.password ? <p className = "text-red-600 font-semibold mt-2 passwordError">* {formik.errors.password}</p> : ""}
 
                 </div>
                 <button type = "submit" className = "btn-primary mr-4">Sign in</button>
