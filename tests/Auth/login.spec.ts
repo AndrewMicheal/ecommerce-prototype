@@ -52,7 +52,13 @@ test.describe("Login Tests", () => {
     const passwordError = page.locator('.passwordError');
     await expect(emailError).toBeVisible();
     await expect(passwordError).toBeVisible();
+  })
 
-
+  test("Login with valid email and password" , async({page}) => {
+    await page.goto("https://ecommerce-prototype-zeta.vercel.app/auth/login");
+    await page.fill("input[name = 'email']" , "andrew22@test.com");
+    await page.fill("input[name = 'password']" , "Andrew123");
+    await page.click("button[type = 'submit']");
+    await expect(page).toHaveURL("https://ecommerce-prototype-zeta.vercel.app/");
   })
 });
