@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 ## 🎥 Playwright Video
 
-[![Watch Demo](public/EcommercePlaywright.png.png)](https://drive.google.com/file/d/1uvv8p4e54pZahUxtImeZBzs3Ebq5Wra5/view)
+[![Watch Demo](public/EcommercePlaywright.png)](https://drive.google.com/file/d/1uvv8p4e54pZahUxtImeZBzs3Ebq5Wra5/view)
