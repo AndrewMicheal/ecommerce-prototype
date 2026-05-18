@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { baseUrl } from "../../src/BaseUrl/BaseUrl";
+import { log } from "console";
 
 test.describe("Login Tests", () => {
   test("Check if backend is alive", async ({ request }) => {
@@ -17,10 +18,12 @@ test.describe("Login Tests", () => {
   });
 
   test("login success", async ({ request }) => {
+    console.log("EMAIL:", process.env.EMAIL_SUCCESS);
+    console.log("PASSWORD:", process.env.PASSWORD_SUCCESS);
     const response = await request.post(`${baseUrl}/api/v1/auth/signin`, {
       data: {
-        email: "andrew22@test.com",
-        password: "Andrew123",
+       email: process.env.EMAIL_SUCCESS,
+        password: process.env.PASSWORD_SUCCESS,
       },
     });
     const responseObject = await response.json();
@@ -29,10 +32,13 @@ test.describe("Login Tests", () => {
   });
 
   test("login fail", async ({ request }) => {
+    console.log("EMAIL : " + process.env.EMAIL_FAIL);
+    console.log("PASSWORD : " + process.env.PASSWORD_ERROR);
+
     const response = await request.post(`${baseUrl}/api/v1/auth/signin`, {
       data: {
-        email: "andrew22@gmail.com",
-        password: "Andrew123",
+        email: process.env.EMAIL_FAIL,
+        password: process.env.PASSWORD_ERROR
       },
     });
     const responseObject = await response.json();
@@ -56,8 +62,8 @@ test.describe("Login Tests", () => {
 
   test("Login with valid email and password" , async({page}) => {
     await page.goto("https://ecommerce-prototype-zeta.vercel.app/auth/login");
-    await page.fill("input[name = 'email']" , "andrew22@test.com");
-    await page.fill("input[name = 'password']" , "Andrew123");
+    await page.fill("input[name = 'email']" , process.env.EMAIL_SUCCESS || '');
+    await page.fill("input[name = 'password']" , process.env.PASSWORD_SUCCESS || '');
     await page.click("button[type = 'submit']");
     await expect(page).toHaveURL("https://ecommerce-prototype-zeta.vercel.app/");
   })
