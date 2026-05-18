@@ -24,6 +24,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
+      - name: Create physical .env file for dotenvx
+        run: |
+          echo "EMAIL_SUCCESS=${{ secrets.EMAIL_SUCCESS }}" > .env
+          echo "PASSWORD_SUCCESS=${{ secrets.PASSWORD_SUCCESS }}" >> .env
+          echo "EMAIL_FAIL=${{ secrets.EMAIL_FAIL }}" >> .env
+          echo "PASSWORD_ERROR=${{ secrets.PASSWORD_ERROR }}" >> .env
+
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
         env:
