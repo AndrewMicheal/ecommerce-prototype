@@ -9,6 +9,10 @@ const __dirname = path.dirname(__filename);
 // 2. تشغيل dotenv باستخدام الـ path الصحيح
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+if (!process.env.CI) {
+  dotenv.config({ path: path.resolve(__dirname, '.env') });
+}
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv

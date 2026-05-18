@@ -24,17 +24,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Create .env file from GitHub Secrets
-        run: |
-          cat << EOF > .env
-          EMAIL_SUCCESS=${{ secrets.EMAIL_SUCCESS }}
-          PASSWORD_SUCCESS=${{ secrets.PASSWORD_SUCCESS }}
-          EMAIL_FAIL=${{ secrets.EMAIL_FAIL }}
-          PASSWORD_ERROR=${{ secrets.PASSWORD_ERROR }}
-          EOF
-
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
+        env:
+          EMAIL_SUCCESS: ${{ secrets.EMAIL_SUCCESS }}
+          PASSWORD_SUCCESS: ${{ secrets.PASSWORD_SUCCESS }}
+          EMAIL_FAIL: ${{ secrets.EMAIL_FAIL }}
+          PASSWORD_ERROR: ${{ secrets.PASSWORD_ERROR }}
 
       - name: Upload Playwright Test Report
         if: always()
