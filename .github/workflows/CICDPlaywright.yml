@@ -34,7 +34,6 @@ jobs:
           echo "EMAIL_FAIL=${{ secrets.EMAIL_FAIL }}" >> .env
           echo "PASSWORD_ERROR=${{ secrets.PASSWORD_ERROR }}" >> .env
 
-      # تشغيل الاختبارات
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
         env:
