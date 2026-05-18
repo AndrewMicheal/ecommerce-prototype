@@ -9,6 +9,11 @@ on:
 jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      EMAIL_SUCCESS: ${{ secrets.EMAIL_SUCCESS }}
+      PASSWORD_SUCCESS: ${{ secrets.PASSWORD_SUCCESS }}
+      EMAIL_FAIL: ${{secrets.EMAIL_FAIL}}
+      PASSWORD_ERROR: ${{secrets.PASSWORD_ERROR}}
 
     steps:
       - uses: actions/checkout@v4
